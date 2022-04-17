@@ -1,0 +1,56 @@
+Column(
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.height/2,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.redAccent,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Location",
+                  style: TextStyle(
+                    fontSize: 50.0,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white
+                  ),
+
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 10.0,bottom: 10.0),
+                  child: Text(
+                    "Temp",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40.0,
+                      fontWeight: FontWeight.w900
+                    ),
+                  ),
+                ),
+                Text(
+                  "High of temp. low of temp",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.w600
+                  ),
+                )
+              ],
+            ),
+          ),
+
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(20.0),
+              child: ListView(
+                children: [
+                  WeatherTile(icon: Icons.thermostat_outlined, title: "Temperature", subTitle: "85"),
+                  WeatherTile(icon: Icons.filter_drama_outlined, title: "Weather", subTitle: "Cloudy"),
+                  WeatherTile(icon: Icons.wb_sunny, title: "Humidity", subTitle: "something"),
+                  WeatherTile(icon: Icons.waves_outlined, title: "Wind Speed", subTitle: "2MPH"),
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
